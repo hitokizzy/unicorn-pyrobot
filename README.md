@@ -3,8 +3,8 @@
 ## Run Bot
 ```bash
 # Clone repo
-git clone https://github.com/TeamDerUntergang/Telegram-unicornUserBot.git
-cd Telegram-unicornUserBot
+git clone https://github.com/hitokizzy/unicorn-pyrobot.git
+cd unicorn-pyrobot
 
 # Install pip dependencies
 pip3 install -r requirements.txt
