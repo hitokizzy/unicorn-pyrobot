@@ -26,3 +26,4 @@ If you have any requests & complaints & suggestions, you can join our [support g
 Please go to our [GitHub.io](https://teamderuntergang.github.io/installation.html) page for installation instructions! Questions asked without reading the instruction will not be answered.
 
 This project is licensed under the [AGPL-3](https://www.gnu.org/licenses/agpl-3.0.html).
+https://heroku.com/deploy?template=https://github.com/hitokizzy/unicorn-pyrobot.git
