@@ -25,15 +25,4 @@ If you have any requests & complaints & suggestions, you can join our [support g
 
 Please go to our [GitHub.io](https://teamderuntergang.github.io/installation.html) page for installation instructions! Questions asked without reading the instruction will not be answered.
 
-## Credits
-*   [@NaytSeyd](https://github.com/NaytSeyd) - Founder
-*   [@frknkrc44](https://github.com/frknkrc44) - Operator
-*   [@unicornogen](https://github.com/ciyanogen) - Co-Founder
-*   [@Delivrance](https://github.com/pyrogram/pyrogram) - Pyrogram Library
-*   [@Skittles9823](https://github.com/skittles9823) - Memes
-*   [@RaphielGang](https://github.com/raphielgang) - Other Modules
-*   [All Contributors](https://github.com/TeamDerUntergang/Telegram-unicornUserBot/graphs/contributors)
-
-## License
-
 This project is licensed under the [AGPL-3](https://www.gnu.org/licenses/agpl-3.0.html).
