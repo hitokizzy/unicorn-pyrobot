@@ -292,7 +292,7 @@ del API_HASH
 
 
 def __get_modules():
-    folder = 'unicornbot/modules'
+    folder = 'unicorn/modules'
     modules = [
         f[:-3]
         for f in listdir(folder)
@@ -306,7 +306,7 @@ def __import_modules():
     LOGS.info(get_translation('loadedModules', [modules]))
     for module in modules:
         try:
-            import_module(f'unicornbot.modules.{module}')
+            import_module(f'unicorn.modules.{module}')
         except Exception:
             if LOG_VERBOSE:
                 LOGS.warn(format_exc())
