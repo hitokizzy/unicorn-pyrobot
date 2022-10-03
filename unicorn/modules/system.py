@@ -30,23 +30,36 @@ from geezram.core import (
 logo = "https://telegra.ph/file/4b788cea5c1413f9496a3.png"
 # ================= CONSTANT =================
 CUSTOM_MSG = ALIVE_MSG or f"`{get_translation('unicornAlive')}`"
+ALIVE_MESSAGE = (
+        f"**✠╼━━━━━━❖━━━━━━━✠ ** \n"
+        f"**          ⭐️UNICORN⭐️** \n"
+        f"**✠╼━━━━━━❖━━━━━━━✠** \n"
+        f"╭✠╼━━━━━━❖━━━━━━━✠╮ \n"
+        f"┣|• ` Majikan  :`{HOSTNAME} \n"
+        f"┣|• ` Username :`@{USER} \n"
+        f"┣|• ` Pyrogram :`Ver {pyrover} \n"
+        f"┣|• ` Python   :`Ver {pyver()} \n"
+        f"╰✠╼━━━━━━❖━━━━━━━✠╯ \n"
+        f"▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰ \n")
+
+
 # ============================================
 
 
-#@unicorn(pattern='^.neofetch$')
-#async def neofetch(message):
- #   try:
- #       from subprocess import PIPE, Popen
+unicorn(pattern='^.neofetch$')
+def neofetch(message):
+    try:
+        from subprocess import PIPE, Popen
 
- #       process = Popen(
-#            ['neofetch', f'HOSTNAME={HOSTNAME}', f'USER={USER}', '--stdout'],
- #           stdout=PIPE,
-#            stderr=PIPE,
-#        )
- #       result, _ = process.communicate()
- #       edit(message, f'`{result.decode()}`')
- #   except BaseException:
-#        edit(message, f'`{get_translation("neofetchNotFound")}`')
+        process = Popen(
+            ['neofetch', f'HOSTNAME={HOSTNAME}', f'USER={USER}', '--stdout'],
+            stdout=PIPE,
+            stderr=PIPE,
+        )
+        result, _ = process.communicate()
+        edit(message, f'`{result.decode()}`')
+    except BaseException:
+        edit(message, f'`{get_translation("neofetchNotFound")}`')
 
 
 @unicorn(pattern='^.botver$')
@@ -82,31 +95,12 @@ def ping(message):
     time = (finish - start).microseconds / 1000
     edit(message, f'**Pong!**\n`{time}ms`')
 
-
-#@unicorn(pattern='^.alive$')
-#async def alive(message):
-    #Alive_msg = f"**[Unicorn-Pyrobot](https://t.me/deldelinaa):**\n\n"
-    #Alive_msg += f"**Python:** `{pyver.split()[0]}`\n"
-    #Alive_msg += f"**Pyrogram:** `{pyrover}`\n"
-    #Alive_msg += f"**Profiles:** [BOT](t.me/{USER})\n"
-    #Alive_msg += f"**Unicorn Version:** `{BOT_VERSION}\n\n`"
-    #Alive_msg += f"**Powered By : Geez | RAM | TOD**" 
-    #await message.reply_photo(
-    #photo=logo,
-    #caption=Alive_msg,
-    #reply_markup=InlineKeyboardMarkup(
-    #        [[
-    #                InlineKeyboardButton(
-    #                    "• Geez •", url="https://t.me/GeezSupport")
-    #            ], [
-    #                InlineKeyboardButton(
-    #                    "• RAM •", url="https://t.me/ramsupportt")
-     #           ]],
-    #    ),
-    #)
-    
- 
-
+@unicorn(pattern='^.alive$')
+def alive(message):
+    if CUSTOM_MSG.lower() == 'alive':
+        alive(message)
+        return
+    edit.reply_photo(message, photo=logo, caption=f'{ALIVE_MESSAGE}')
 
 @unicorn(pattern='^.echo')
 def test_echo(message):
