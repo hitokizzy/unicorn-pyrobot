@@ -206,50 +206,50 @@ BOT_PREFIX = environ.get('BOT_PREFIX', None)
 ENV_RESTRICTED_KEYS = ['HEROKU_KEY', 'HEROKU_APPNAME', 'SESSION', 'API_ID', 'API_HASH']
 
 
-def load_brain():
-    try:
-        if path.exists('learning-data-root.check'):
-            remove('learning-data-root.check')
-        URL = (
-            'https://raw.githubusercontent.com/NaytSeyd/'
-            'databasescape/master/learning-data-root.check'
-        )
-        with open('learning-data-root.check', 'wb') as load:
-            load.write(get(URL).content)
-        DB = connect('learning-data-root.check')
-        CURSOR = DB.cursor()
-        CURSOR.execute('SELECT * FROM BRAIN1')
-        ALL_ROWS = CURSOR.fetchall()
-        for i in ALL_ROWS:
-            BRAIN.append(i[0])
-        DB.close()
-    except BaseException:
-        pass
+#def load_brain():
+    #try:
+       # if path.exists('learning-data-root.check'):
+ #           remove('learning-data-root.check')
+  #      URL = (
+   #         'https://raw.githubusercontent.com/NaytSeyd/'
+   #         'databasescape/master/learning-data-root.check'
+   #     )
+   #     with open('learning-data-root.check', 'wb') as load:
+    #        load.write(get(URL).content)
+   #     DB = connect('learning-data-root.check')
+   #     CURSOR = DB.cursor()
+   #     CURSOR.execute('SELECT * FROM BRAIN1')
+   #     ALL_ROWS = CURSOR.fetchall()
+   #     for i in ALL_ROWS:
+   #         BRAIN.append(i[0])
+   #     DB.close()
+   # except BaseException:
+   #     pass
 
 
-def load_bl():
-    try:
-        if path.exists('blacklist.check'):
-            remove('blacklist.check')
-        URL = (
-            'https://raw.githubusercontent.com/ramadhani892/'
-            'Ramblack/master/ramblacklist.json'
-        )
-        with open('blacklist.check', 'wb') as load:
-            load.write(get(URL).content)
-        DB = connect('blacklist.check')
-        CURSOR = DB.cursor()
-        CURSOR.execute('SELECT * FROM RETARDS')
-        ALL_ROWS = CURSOR.fetchall()
-        for i in ALL_ROWS:
-            BLACKLIST.append(i[0])
-        DB.close()
-    except BaseException:
-        pass
+#def load_bl():
+   # try:
+   #     if path.exists('blacklist.check'):
+   #         remove('blacklist.check')
+   #     URL = (
+   #         'https://raw.githubusercontent.com/ramadhani892/'
+   #         'Ramblack/master/ramblacklist.json'
+   #     )
+   #     with open('blacklist.check', 'wb') as load:
+   #         load.write(get(URL).content)
+   #     DB = connect('blacklist.check')
+   #     CURSOR = DB.cursor()
+   #     CURSOR.execute('SELECT * FROM RETARDS')
+   #     ALL_ROWS = CURSOR.fetchall()
+   #     for i in ALL_ROWS:
+   #         BLACKLIST.append(i[0])
+   #     DB.close()
+   # except BaseException:
+   #     pass
 
 
-load_brain()
-load_bl()
+#load_brain()
+#load_bl()
 
 
 class PyroClient(Client):
