@@ -34,7 +34,7 @@ CUSTOM_MSG = ALIVE_MSG or f"`{get_translation('unicornAlive')}`"
 
 
 @unicorn(pattern='^.neofetch$')
-def neofetch(message):
+async def neofetch(message):
     try:
         from subprocess import PIPE, Popen
 
@@ -50,7 +50,7 @@ def neofetch(message):
 
 
 @unicorn(pattern='^.botver$')
-def bot_version(message):
+async def bot_version(message):
     if which('git'):
         from subprocess import PIPE, Popen
 
