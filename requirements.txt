@@ -1,6 +1,5 @@
 bs4
 cowpy
-dotenv
 emoji
 exifread
 gitpython
