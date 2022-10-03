@@ -33,20 +33,20 @@ CUSTOM_MSG = ALIVE_MSG or f"`{get_translation('unicornAlive')}`"
 # ============================================
 
 
-@unicorn(pattern='^.neofetch$')
-async def neofetch(message):
-    try:
-        from subprocess import PIPE, Popen
+#@unicorn(pattern='^.neofetch$')
+#async def neofetch(message):
+ #   try:
+ #       from subprocess import PIPE, Popen
 
-        process = Popen(
-            ['neofetch', f'HOSTNAME={HOSTNAME}', f'USER={USER}', '--stdout'],
-            stdout=PIPE,
-            stderr=PIPE,
-        )
-        result, _ = process.communicate()
-        edit(message, f'`{result.decode()}`')
-    except BaseException:
-        edit(message, f'`{get_translation("neofetchNotFound")}`')
+ #       process = Popen(
+#            ['neofetch', f'HOSTNAME={HOSTNAME}', f'USER={USER}', '--stdout'],
+ #           stdout=PIPE,
+#            stderr=PIPE,
+#        )
+ #       result, _ = process.communicate()
+ #       edit(message, f'`{result.decode()}`')
+ #   except BaseException:
+#        edit(message, f'`{get_translation("neofetchNotFound")}`')
 
 
 @unicorn(pattern='^.botver$')
