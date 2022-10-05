@@ -90,7 +90,6 @@ def ping(message):
     finish = datetime.now()
     time = (finish - start).microseconds / 1000
     edit(message, f'**Pong!**\n`{time}ms`')
-caption=''
 @unicorn(pattern='^.alive$')
 def alive(message):
     if CUSTOM_MSG.lower() == 'uncrn':
@@ -98,7 +97,7 @@ def alive(message):
         return
     edit(message,
     logo,
-    caption=f'{UNICORN_ALV}')
+    f'{UNICORN_ALV}')
 
 @unicorn(pattern='^.echo')
 def test_echo(message):
