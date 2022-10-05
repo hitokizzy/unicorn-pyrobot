@@ -91,6 +91,7 @@ def ping(message):
     time = (finish - start).microseconds / 1000
     edit(message, f'**Pong!**\n`{time}ms`')
 caption=''
+photo=None
 @unicorn(pattern='^.alive$')
 def alive(message):
     if CUSTOM_MSG.lower() == 'uncrn':
