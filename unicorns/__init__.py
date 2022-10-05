@@ -149,7 +149,7 @@ GDRIVE_FOLDER_ID = environ.get('GDRIVE_FOLDER_ID', None)
 ALIVE_MSG = environ.get('ALIVE_MSG', None)
 
 # For neofetch
-HOSTNAME = environ.get('HOSTNAME', 'DerUntergang')
+HOSTNAME = environ.get('HOSTNAME', 'Unicorns')
 USER = environ.get('USER', 'geezram')
 
 # Chrome Driver and Headless Google Chrome Binaries
