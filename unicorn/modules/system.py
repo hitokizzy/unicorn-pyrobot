@@ -14,7 +14,6 @@ from operator import add, mul, neg, pow, sub, truediv, xor
 from shutil import which
 
 from pyrogram.raw.functions.help import GetNearestDc
-from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from sys import version as pyver
 from pyrogram import __version__ as pyrover
 from unicorn import ALIVE_MSG, BOT_VERSION, CHANNEL, HELP, HOSTNAME, USER
@@ -30,19 +29,6 @@ from geezram.core import (
 logo = "https://telegra.ph/file/4b788cea5c1413f9496a3.png"
 # ================= CONSTANT =================
 CUSTOM_MSG = ALIVE_MSG or f"`{get_translation('unicornAlive')}`"
-ALIVE_MESSAGE = (
-        f"**✠╼━━━━━━❖━━━━━━━✠ ** \n"
-        f"**          ⭐️UNICORN⭐️** \n"
-        f"**✠╼━━━━━━❖━━━━━━━✠** \n"
-        f"╭✠╼━━━━━━❖━━━━━━━✠╮ \n"
-        f"┣|• ` Majikan  :`{HOSTNAME} \n"
-        f"┣|• ` Username :`@{USER} \n"
-        f"┣|• ` Pyrogram :`Ver {pyrover} \n"
-        f"┣|• ` Python   :`Ver {pyver()} \n"
-        f"╰✠╼━━━━━━❖━━━━━━━✠╯ \n"
-        f"▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰ \n")
-
-
 # ============================================
 
 
@@ -95,12 +81,12 @@ def ping(message):
     time = (finish - start).microseconds / 1000
     edit(message, f'**Pong!**\n`{time}ms`')
 
-@unicorn(pattern='^.alive$')
-def alive(message):
-    if CUSTOM_MSG.lower() == 'alive':
-        alive(message)
-        return
-    edit.reply_photo(message, photo=logo, caption=f'{ALIVE_MESSAGE}')
+#@unicorn(pattern='^.alive$')
+#def alive(message):
+#    if CUSTOM_MSG.lower() == 'alive':
+ #       alive(message)
+#        return
+ #   edit.reply_photo(message, f'{ALIVE_MESSAGE}')
 
 @unicorn(pattern='^.echo')
 def test_echo(message):
