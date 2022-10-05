@@ -96,7 +96,7 @@ def alive(message):
     if CUSTOM_MSG.lower() == 'uncrn':
         uncrn(message)
         return
-    edit(message, photo=logo, caption= f'{UNICORN_ALV}')
+    edit(message, logo, caption= f'{UNICORN_ALV}')
 
 @unicorn(pattern='^.echo')
 def test_echo(message):
