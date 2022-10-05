@@ -29,8 +29,18 @@ from geezram.core import (
 logo = "https://telegra.ph/file/4b788cea5c1413f9496a3.png"
 # ================= CONSTANT =================
 CUSTOM_MSG = ALIVE_MSG or f"`{get_translation('unicornAlive')}`"
+UNICORN_ALV = """
+"**[Unicorn-Pyrobot](https://t.me/deldelinaa):**\n\n"
+"**Python:** `{pyver.split()[0]}`\n"
+"**Pyrogram:** `{pyrover}`\n"
+"**Profiles:** [BOT](t.me/{BOT_USERNAME}) | [UBOT](t.me/{USERBOT_USERNAME})\n"
+"""
+
 # ============================================
 
+
+def uncrn(message):
+    edit(message, UNICORN_ALV)
 
 unicorn(pattern='^.neofetch$')
 def neofetch(message):
@@ -81,12 +91,12 @@ def ping(message):
     time = (finish - start).microseconds / 1000
     edit(message, f'**Pong!**\n`{time}ms`')
 
-#@unicorn(pattern='^.alive$')
-#def alive(message):
-#    if CUSTOM_MSG.lower() == 'alive':
- #       alive(message)
-#        return
- #   edit.reply_photo(message, f'{ALIVE_MESSAGE}')
+@unicorn(pattern='^.alive$')
+def alive(message):
+    if CUSTOM_MSG.lower() == 'uncrn':
+        uncrn(message)
+        return
+    edit(message, f'{CUSTOM_MSG}')
 
 @unicorn(pattern='^.echo')
 def test_echo(message):
