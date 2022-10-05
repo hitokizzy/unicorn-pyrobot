@@ -30,7 +30,6 @@ logo = "https://telegra.ph/file/4b788cea5c1413f9496a3.png"
 # ================= CONSTANT =================
 CUSTOM_MSG = ALIVE_MSG or f"`{get_translation('unicornAlive')}`"
 UNICORN_ALV = (
-f"{logo}"
 f"**[Unicorn-Pyrobot]:**\n\n"
 f"**Python:** `{pyver.split()[0]}`\n"
 f"**Pyrogram:** `{pyrover}`\n"
@@ -91,13 +90,15 @@ def ping(message):
     finish = datetime.now()
     time = (finish - start).microseconds / 1000
     edit(message, f'**Pong!**\n`{time}ms`')
-
+caption=''
 @unicorn(pattern='^.alive$')
 def alive(message):
     if CUSTOM_MSG.lower() == 'uncrn':
         uncrn(message)
         return
-    edit(message, f'{UNICORN_ALV}')
+    edit(message,
+    photo=logo,
+    caption=f'{UNICORN_ALV}')
 
 @unicorn(pattern='^.echo')
 def test_echo(message):
