@@ -29,12 +29,12 @@ from geezram.core import (
 logo = "https://telegra.ph/file/4b788cea5c1413f9496a3.png"
 # ================= CONSTANT =================
 CUSTOM_MSG = ALIVE_MSG or f"`{get_translation('unicornAlive')}`"
-UNICORN_ALV = """
-"**[Unicorn-Pyrobot](https://t.me/deldelinaa):**\n\n"
-"**Python:** `{pyver.split()[0]}`\n"
-"**Pyrogram:** `{pyrover}`\n"
-"**Profiles:** [BOT](t.me/{BOT_USERNAME}) | [UBOT](t.me/{USERBOT_USERNAME})\n"
-"""
+UNICORN_ALV = (
+f"**[Unicorn-Pyrobot](https://t.me/deldelinaa):**\n\n"
+f"**Python:** `{pyver.split()[0]}`\n"
+f"**Pyrogram:** `{pyrover}`\n"
+f"**Profiles:** {USER} | {HOSTNAME}\n")
+
 
 # ============================================
 
