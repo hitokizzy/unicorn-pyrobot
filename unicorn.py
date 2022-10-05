@@ -8,6 +8,6 @@
 #
 
 if __name__ == '__main__':
-    from unicorn import app
+    from unicorns import app
 
     app.run()

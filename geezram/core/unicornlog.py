@@ -9,7 +9,7 @@
 
 from os import remove
 
-from unicorn import LOG_ID, app
+from unicorns import LOG_ID, app
 
 from .send import send, send_doc
 

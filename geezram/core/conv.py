@@ -10,7 +10,7 @@
 from os import remove
 from time import sleep
 
-from unicorn import CONVERSATION, app
+from unicorns import CONVERSATION, app
 
 
 class PyroConversation:

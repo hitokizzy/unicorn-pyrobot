@@ -14,7 +14,7 @@ from typing import List
 
 from pyrogram import enums
 from pyrogram.types import Message, User
-from unicorn import BOT_PREFIX, BRAIN, LOG_VERBOSE, TEMP_SETTINGS, app
+from unicorns import BOT_PREFIX, BRAIN, LOG_VERBOSE, TEMP_SETTINGS, app
 
 MARKDOWN_FIX_CHAR = '\u2064'
 SPAM_COUNT = [0]

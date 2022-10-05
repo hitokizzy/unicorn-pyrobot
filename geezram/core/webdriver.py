@@ -7,7 +7,7 @@
 # All rights reserved. See COPYING, AUTHORS.
 #
 
-from unicorn import CHROME_DRIVER
+from unicorns import CHROME_DRIVER
 from selenium.webdriver import Chrome, ChromeOptions
 
 

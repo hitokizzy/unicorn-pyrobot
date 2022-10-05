@@ -11,7 +11,7 @@ from os import path, remove
 
 from pyrogram import enums
 from pyrogram.types import Message
-from unicorn import LOG_VERBOSE
+from unicorns import LOG_VERBOSE
 
 from .misc import MARKDOWN_FIX_CHAR, __status_out__, get_duration
 

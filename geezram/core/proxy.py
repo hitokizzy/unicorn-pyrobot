@@ -9,7 +9,7 @@
 
 from bs4 import BeautifulSoup
 from requests import get
-from unicorn import TEMP_SETTINGS, get_translation
+from unicorns import TEMP_SETTINGS, get_translation
 
 from .misc import edit
 

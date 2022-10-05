@@ -16,7 +16,7 @@ from traceback import format_exc
 from pyrogram import ContinuePropagation, StopPropagation, enums, filters
 from pyrogram.handlers import MessageHandler, EditedMessageHandler
 from pyrogram.raw.types import MessageActionContactSignUp
-from unicorn import BLACKLIST, BOT_VERSION, BRAIN, TEMP_SETTINGS, app, get_translation
+from unicorns import BLACKLIST, BOT_VERSION, BRAIN, TEMP_SETTINGS, app, get_translation
 
 from .misc import _parsed_prefix, edit, get_cmd, is_admin
 from .unicornlog import send_log_doc
