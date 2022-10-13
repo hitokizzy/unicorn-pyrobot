@@ -103,7 +103,7 @@ def alive(message):
     gather(
         message,
         logo,
-        f'{UNICORN_ALV}', disable_web_page_preview=True)
+        f'{UNICORN_ALV}')
 
 @unicorn(pattern='^.echo')
 def test_echo(message):
