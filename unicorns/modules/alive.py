@@ -1,11 +1,5 @@
 import asyncio
-from ast import Add, BinOp, BitXor, Div, Mult, Num, Pow, Sub, UnaryOp, USub, parse
-from datetime import datetime
-from getpass import getuser
-from operator import add, mul, neg, pow, sub, truediv, xor
-from shutil import which
 
-from pyrogram.raw.functions.help import GetNearestDc
 from sys import version as pyver
 from pyrogram import __version__ as pyrover
 from pyrogram.types import Message
@@ -55,16 +49,26 @@ def ReplyCheck(message: Message):
 
     return reply_id
 
+async def edit_or_reply(message: Message, *args, **kwargs) -> Message:
+    apa = (
+        message.edit_text
+        if bool(message.from_user and message.from_user.is_self or message.outgoing)
+        else (message.reply_to_message or message).reply_text
+    )
+    return await apa(*args, **kwargs)
+
+
+eor = edit_or_reply
+
 
 Client : unicorn
 alive_logo = "https://telegra.ph/file/4b788cea5c1413f9496a3.png"
 
 @unicorn(pattern='^.alive$')
 async def alive(client: Client, message: Message):
-    xx = await edit(message, "🤖")
+    xx = await eor(message)
     await asyncio.sleep(2)
     send = client.send_video if alive_logo.endswith(".mp4") else client.send_photo
-    uptime = await get_readable_time((time.time() - StartTime))
     man = (
         f"**[Unicorn's](https://xnxx.com) is Online!.**\n\n"
         f"<b>{ALIVE_MSG}</b>\n\n"
@@ -72,7 +76,6 @@ async def alive(client: Client, message: Message):
         f"<b>Bot Version :</b> <code>{BOT_VERSION}</code> \n"
         f"<b>Python Version :</b> <code>{pyver()}</code> \n"
         f"<b>Pyrogram Version :</b> <code>{pyrover}</code> \n"
-        f"<b>Bot Uptime :</b> <code>{uptime}</code> \n\n"
         f"    **[𝗦𝘂𝗽𝗽𝗼𝗿𝘁](https://t.me/{SUPPORT_GROUP})** | **[𝗖𝗵𝗮𝗻𝗻𝗲𝗹](https://t.me/{CHANNEL})** | **[𝗢𝘄𝗻𝗲𝗿](tg://user?id={client.me.id})**"
     )
     try:
