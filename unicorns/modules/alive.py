@@ -65,18 +65,15 @@ Client : unicorn
 alive_logo = "https://telegra.ph/file/4b788cea5c1413f9496a3.png"
 
 @unicorn(pattern='^.alive$')
-async def alive(client: Client, message: Message):
+async def alive(client: unicorn, message: Message):
     xx = await eor(message)
     await asyncio.sleep(2)
     send = client.send_video if alive_logo.endswith(".mp4") else client.send_photo
     man = (
-        f"**[Unicorn's](https://xnxx.com) is Online!.**\n\n"
-        f"<b>{ALIVE_MSG}</b>\n\n"
-        f"<b>Master :</b> {client.me.mention} \n"
-        f"<b>Bot Version :</b> <code>{BOT_VERSION}</code> \n"
-        f"<b>Python Version :</b> <code>{pyver()}</code> \n"
-        f"<b>Pyrogram Version :</b> <code>{pyrover}</code> \n"
-        f"    **[𝗦𝘂𝗽𝗽𝗼𝗿𝘁](https://t.me/{SUPPORT_GROUP})** | **[𝗖𝗵𝗮𝗻𝗻𝗲𝗹](https://t.me/{CHANNEL})** | **[𝗢𝘄𝗻𝗲𝗿](tg://user?id={client.me.id})**"
+        f"**[Unicorn-Pyrobot]:**\n\n"
+        f"**Python:** `{pyver.split()[0]}`\n"
+        f"**Pyrogram:** `{pyrover}`\n"
+        f"**Profiles:** {USER} | {HOSTNAME}\n"
     )
     try:
         await asyncio.gather(
