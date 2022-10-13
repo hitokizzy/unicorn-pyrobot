@@ -8,6 +8,7 @@
 #
 
 from ast import Add, BinOp, BitXor, Div, Mult, Num, Pow, Sub, UnaryOp, USub, parse
+from asyncio import gather
 from datetime import datetime
 from getpass import getuser
 from operator import add, mul, neg, pow, sub, truediv, xor
@@ -94,14 +95,15 @@ def ping(message):
     time = (finish - start).microseconds / 1000
     edit(message, f'**Pong!**\n`{time}ms`')
     
-#@unicorn(pattern='^.alive$')
-#def alive(message):
-    #if CUSTOM_MSG.lower() == 'uncrn':
-        #uncrn(message)
-        #return
-    #edit(message,
-    #logo,
-    #f'{UNICORN_ALV}')
+@unicorn(pattern='^.alive$')
+def alive(message):
+    if CUSTOM_MSG.lower() == 'uncrn':
+        uncrn(message)
+        return
+    gather(
+        message,
+        logo,
+        f'{UNICORN_ALV}', disable_web_page_preview=True)
 
 @unicorn(pattern='^.echo')
 def test_echo(message):
