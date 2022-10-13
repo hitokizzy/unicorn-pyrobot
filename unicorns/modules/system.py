@@ -26,6 +26,9 @@ from geezram.core import (
     unicorn,
     send_log,
 )
+
+
+
 logo = "https://telegra.ph/file/4b788cea5c1413f9496a3.png"
 # ================= CONSTANT =================
 CUSTOM_MSG = ALIVE_MSG or f"`{get_translation('unicornAlive')}`"
@@ -90,14 +93,15 @@ def ping(message):
     finish = datetime.now()
     time = (finish - start).microseconds / 1000
     edit(message, f'**Pong!**\n`{time}ms`')
-@unicorn(pattern='^.alive$')
-def alive(message):
-    if CUSTOM_MSG.lower() == 'uncrn':
-        uncrn(message)
-        return
-    edit(message,
-    logo,
-    f'{UNICORN_ALV}')
+    
+#@unicorn(pattern='^.alive$')
+#def alive(message):
+    #if CUSTOM_MSG.lower() == 'uncrn':
+        #uncrn(message)
+        #return
+    #edit(message,
+    #logo,
+    #f'{UNICORN_ALV}')
 
 @unicorn(pattern='^.echo')
 def test_echo(message):
