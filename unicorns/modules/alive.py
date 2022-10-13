@@ -65,7 +65,7 @@ Client : unicorn
 alive_logo = "https://telegra.ph/file/4b788cea5c1413f9496a3.png"
 
 @unicorn(pattern='^.alive$')
-async def alive(client: unicorn, message: Message):
+async def alive(client: unicorn, message):
     xx = await eor(message)
     await asyncio.sleep(2)
     send = client.send_video if alive_logo.endswith(".mp4") else client.send_photo
